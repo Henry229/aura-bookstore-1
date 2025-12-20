@@ -2,6 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import { BorderGradient } from './ui/BorderGradient';
 
+// Declare UnicornStudio type for TypeScript
+declare global {
+  interface Window {
+    UnicornStudio?: {
+      init: () => Promise<unknown[]>;
+      destroy: () => void;
+    };
+  }
+}
+
 const CARDS = [
   { id: 0, src: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/3d5923b9-321c-4e35-ac04-0d7fb5c483b1_320w.webp', rotate: 'rotate-[-8deg]', translate: 'translate-y-3 sm:translate-y-5', alt: 'Artwork card' },
   { id: 1, src: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c5fb864f-cf3d-4942-9629-249d52477022_800w.webp', rotate: '-rotate-2', translate: 'translate-y-5 sm:translate-y-7', alt: '3D render card' },
@@ -25,6 +35,23 @@ export const Hero: React.FC = () => {
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
+  // Initialize Unicorn Studio
+  useEffect(() => {
+    if (window.UnicornStudio) {
+      window.UnicornStudio.init().then((scenes) => {
+        console.log('Unicorn Studio initialized:', scenes);
+      }).catch((err) => {
+        console.error('Unicorn Studio error:', err);
+      });
+    }
+
+    return () => {
+      if (window.UnicornStudio) {
+        window.UnicornStudio.destroy();
+      }
+    };
+  }, []);
+
   const handleCardClick = (e: React.MouseEvent, id: number) => {
     e.stopPropagation();
     setActiveCard(activeCard === id ? null : id);
@@ -32,16 +59,14 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative pt-36 pb-28 sm:pt-48 sm:pb-32 overflow-hidden">
-        {/* Background Aura */}
-        <div className="pointer-events-none fixed inset-0 -z-10">
-            <div className="absolute inset-0 opacity-60" style={{
-                background: `radial-gradient(800px 400px at 20% 10%, rgba(59,130,246,.16), transparent 60%),
-                            radial-gradient(800px 400px at 80% 10%, rgba(249,115,22,.14), transparent 60%),
-                            radial-gradient(1000px 600px at 50% 100%, rgba(0,0,0,.08), transparent 70%)`
-            }}></div>
-        </div>
+        {/* Background Aurora - Unicorn Studio WebGL */}
+        <div
+          data-us-project="ILgOO23w4wEyPQOKyLO4"
+          className="pointer-events-none absolute inset-0 z-0"
+          style={{ width: '100%', height: '100%' }}
+        ></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Headline */}
         <div className="mx-auto max-w-4xl text-center animate-fade-slide-in">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-[1.06] tracking-tighter font-semibold">
