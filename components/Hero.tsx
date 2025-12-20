@@ -13,12 +13,12 @@ declare global {
 }
 
 const CARDS = [
-  { id: 0, src: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/3d5923b9-321c-4e35-ac04-0d7fb5c483b1_320w.webp', rotate: 'rotate-[-8deg]', translate: 'translate-y-3 sm:translate-y-5', alt: 'Artwork card' },
-  { id: 1, src: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c5fb864f-cf3d-4942-9629-249d52477022_800w.webp', rotate: '-rotate-2', translate: 'translate-y-5 sm:translate-y-7', alt: '3D render card' },
-  { id: 2, src: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/58cdb928-9435-44fa-b69e-7acebfffa0f7_800w.webp', rotate: 'rotate-3', translate: 'translate-y-2', alt: 'Minimal shapes card' },
-  { id: 3, src: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/3c4f1dea-f838-465a-bfd2-8fbbf334a6bc_320w.webp', rotate: 'rotate-0', translate: '-translate-y-1', alt: 'Abstract red card' },
-  { id: 4, src: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/773cd99d-a5ac-4c9a-b312-b9b3e3a42002_800w.webp', rotate: '-rotate-2', translate: 'translate-y-3', alt: 'Mountains card' },
-  { id: 5, src: 'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/97837bc2-4cb4-44a3-8f15-444c524bd4c0_800w.webp', rotate: 'rotate-6', translate: 'translate-y-6', alt: 'Green minimal card' },
+  { id: 0, src: '/book-pink.png', rotate: 'rotate-[-6deg]', translate: 'translate-y-4', alt: '생활영어 영작연습 핑크 시리즈' },
+  { id: 1, src: '/book-purple.png', rotate: 'rotate-[-2deg]', translate: '-translate-y-2', alt: '생활영어 영작연습 퍼플 시리즈' },
+  { id: 2, src: '/book-black.png', rotate: 'rotate-[3deg]', translate: 'translate-y-3', alt: '생활영어 영작연습 블랙 시리즈' },
+  { id: 3, src: '/english-expression.png', rotate: 'rotate-0', translate: '-translate-y-1', alt: 'English Expression' },
+  { id: 4, src: '/english-pattern-40.png', rotate: 'rotate-[-3deg]', translate: 'translate-y-4', alt: 'English Pattern 40' },
+  { id: 5, src: '/master-phraseverbal.png', rotate: 'rotate-[5deg]', translate: 'translate-y-2', alt: 'Master Phrase Verbal' },
 ];
 
 export const Hero: React.FC = () => {
@@ -97,7 +97,7 @@ export const Hero: React.FC = () => {
 
           {/* Cards Grid */}
           <div className="flex justify-center" ref={containerRef}>
-            <div className="grid grid-cols-6 gap-3 sm:gap-4 w-full">
+            <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 sm:gap-5 max-w-5xl mx-auto">
               {CARDS.map((card) => {
                 const isActive = activeCard === card.id;
                 const isBlurred = activeCard !== null && !isActive;
@@ -105,8 +105,8 @@ export const Hero: React.FC = () => {
                 return (
                   <div
                     key={card.id}
-                    className={`col-span-2 sm:col-span-1 self-end cursor-pointer transition-all duration-700 ease-out 
-                      ${isActive ? 'z-50 scale-[1.15] !rotate-0 !translate-y-0' : 'hover:scale-105'}
+                    className={`self-end cursor-pointer transition-all duration-700 ease-out
+                      ${isActive ? 'z-50 scale-[1.1] !rotate-0 !translate-y-0' : 'hover:scale-105'}
                       ${isBlurred ? 'blur-[8px] opacity-40' : ''}
                       ${!isActive ? `${card.rotate} ${card.translate}` : ''}
                     `}
