@@ -135,14 +135,38 @@ export const Hero: React.FC = () => {
 
         {/* CTAs */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-slide-in" style={{ animationDelay: '0.7s' }}>
-          <button className="group relative h-11 inline-flex items-center justify-center gap-2 rounded-full px-8 outline outline-1 outline-white/10 hover:outline-white/20 hover:-translate-y-0.5 transition-all duration-500">
-            {/* Custom Button Background */}
-            <span className="absolute inset-0 rounded-full overflow-hidden">
-                <span className="absolute inset-0 rounded-full bg-gradient-to-br from-neutral-900 via-[#1e1e21] to-[#2d2d32]"></span>
-                <span className="absolute -top-[52px] right-1 size-20 bg-blue-400 opacity-15 blur-[35px]"></span>
-                <span className="absolute -bottom-[42px] -left-[19px] size-20 bg-purple-400 opacity-10 blur-[40px]"></span>
+          <button className="group inline-flex lg:h-11 leading-none -tracking-[0.02em] outline outline-1 outline-white/10 hover:outline-white/20 transition-all duration-500 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-blue-400/50 text-base font-semibold text-white h-10 max-w-[300px] rounded-full px-6 relative items-center justify-center border-gradient before:rounded-full">
+            {/* Dark gradient background */}
+            <span className="absolute -inset-px h-full w-full overflow-hidden rounded-full" aria-hidden="true">
+              {/* Core dark gradient */}
+              <span
+                className="absolute inset-0 rounded-full"
+                style={{ background: 'linear-gradient(140deg, rgba(15,15,17,1) 0%, rgba(30,30,33,1) 35%, rgba(45,45,50,1) 70%, rgba(20,20,22,1) 100%)' }}
+              ></span>
+              {/* Subtle accent glows */}
+              <span className="absolute -top-[52px] right-1 size-20 bg-blue-400 opacity-15 mix-blend-lighten blur-[35px] rounded-full"></span>
+              <span className="absolute top-0 right-1 h-[28px] w-20 bg-blue-300 opacity-20 mix-blend-lighten blur-[25px] rounded-full"></span>
+              <span className="absolute -bottom-[42px] -left-[19px] size-20 bg-purple-400 opacity-10 mix-blend-lighten blur-[40px] rounded-full"></span>
+              {/* Sheen on hover */}
+              <span className="absolute inset-0 overflow-hidden rounded-full">
+                <span className="absolute -left-1/2 top-0 h-full w-1/2 bg-white/15 opacity-0 skew-x-12 blur-sm transition-all duration-700 group-hover:opacity-30 group-hover:translate-x-[220%] rounded-full"></span>
+              </span>
+              {/* Border highlight */}
+              <span className="absolute inset-0 ring-1 ring-inset ring-white/15 rounded-full"></span>
             </span>
-             <span className="relative z-10 text-white font-medium text-sm">Get started today</span>
+
+            {/* Subtle top border */}
+            <span className="z-20 blur-[1px] w-full h-full rounded-full absolute top-0 left-0" aria-hidden="true">
+              <span className="-top-px -left-px z-20 w-full h-full rounded-full absolute" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255,255,255,0.12)' }}></span>
+            </span>
+
+            {/* Content */}
+            <span className="relative z-10 flex items-center gap-1.5 text-[14px] leading-none font-normal -tracking-[0.04em] lg:text-base text-white/95 rounded-full">
+              Get started today
+            </span>
+
+            {/* Hover outline feedback */}
+            <span className="pointer-events-none absolute inset-0 ring-0 ring-blue-400/0 transition-[ring,opacity] duration-500 group-hover:ring-4 group-hover:opacity-25 rounded-full"></span>
           </button>
           
           <BorderGradient as="a" href="#" className="inline-flex items-center gap-2 rounded-full bg-neutral-800/60 px-5 py-3 text-sm font-medium text-neutral-100 hover:bg-neutral-800 ring-1 ring-white/10">
