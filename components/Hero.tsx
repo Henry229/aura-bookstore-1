@@ -317,7 +317,13 @@ export const Hero: React.FC = () => {
           className="mx-auto mt-8 max-w-xl text-center text-base text-neutral-300 animate-fade-slide-in"
           style={{ animationDelay: '0.5s' }}
         >
-          Build your professional portfolio, connect with collectors, and share your creative journey with a global community.
+          워크북, 플래시카드, 말하기연습까지 한 곳에서. 체계적인 영어습관을 만들어보세요.
+        </p>
+        <p
+          className="mx-auto mt-3 max-w-xl text-center text-base text-neutral-400 animate-fade-slide-in"
+          style={{ animationDelay: '0.6s' }}
+        >
+          매일 10분 영작연습으로 영어 자신감을 키우세요. 쏘피쌤과 함께 생활영어 마스터!
         </p>
 
         {/* CTAs */}
@@ -346,7 +352,7 @@ export const Hero: React.FC = () => {
             </span>
 
             <span className="relative z-10 flex items-center gap-1.5 text-[14px] leading-none font-normal -tracking-[0.04em] lg:text-base text-white/95 rounded-full">
-              Get started today
+              지금 시작하기
             </span>
 
             <span className="pointer-events-none absolute inset-0 ring-0 ring-blue-400/0 transition-[ring,opacity] duration-500 group-hover:ring-4 group-hover:opacity-25 rounded-full"></span>
