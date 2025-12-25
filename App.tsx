@@ -11,7 +11,15 @@ import { Footer } from './components/Footer';
 function App() {
   return (
     <div className="min-h-screen bg-black text-neutral-100 antialiased font-sans selection:bg-violet-500/30">
-      <div className="gradient-blur"></div>
+      {/* Progressive blur from top */}
+      <div className="gradient-blur">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       
       <Header />
       

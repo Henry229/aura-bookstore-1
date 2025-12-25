@@ -4,9 +4,15 @@ interface SectionWrapperProps {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  animation?: string;
 }
 
-export const SectionWrapper: React.FC<SectionWrapperProps> = ({ children, className = '', delay = 0 }) => {
+export const SectionWrapper: React.FC<SectionWrapperProps> = ({
+  children,
+  className = '',
+  delay = 0,
+  animation = 'fadeSlideIn 1s ease-out both'
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -19,8 +25,8 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({ children, classN
         }
       },
       {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.2,
+        rootMargin: '0px 0px -10% 0px',
       }
     );
 
@@ -33,12 +39,16 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({ children, classN
     };
   }, []);
 
-  const style = delay ? { transitionDelay: `${delay}ms` } : {};
+  const delaySeconds = delay / 1000;
+  const style: React.CSSProperties = {
+    animation: `${animation}`,
+    animationDelay: `${delaySeconds}s`,
+  };
 
   return (
     <div
       ref={ref}
-      className={`animate-on-scroll ${isVisible ? 'is-visible' : ''} ${className}`}
+      className={`animate-on-scroll ${isVisible ? 'animate' : ''} ${className}`}
       style={style}
     >
       {children}
