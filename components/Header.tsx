@@ -8,8 +8,9 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Brand */}
-          <a href="#" className="inline-flex items-center justify-center w-[100px] h-[40px] opacity-90 hover:opacity-100 transition-opacity">
-             <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5e2bb527-bd5b-49c0-ab02-6df2869bcd3a_1600w.png" alt="Logo" className="w-full h-full object-contain" />
+          <a href="#" className="inline-flex items-center gap-2 opacity-90 hover:opacity-100 transition-opacity">
+            <img src="/orsso-logo.svg" alt="Orsso Logo" className="h-8 w-auto" />
+            <img src="/orsso-title.svg" alt="올쏘의 영어" className="h-8 w-auto" />
           </a>
 
           {/* Nav links */}
