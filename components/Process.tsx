@@ -1,16 +1,7 @@
 import React from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import { SectionWrapper } from './ui/SectionWrapper';
 import { BorderGradient } from './ui/BorderGradient';
-import { Activity, Layers, Zap, Clock, TrendingUp, Code, FileText, Search, Settings } from 'lucide-react';
-
-const RADAR_DATA = [
-  { subject: 'System', A: 85, fullMark: 100 },
-  { subject: 'Process', A: 70, fullMark: 100 },
-  { subject: 'Speed', A: 45, fullMark: 100 },
-  { subject: 'Manual', A: 90, fullMark: 100 },
-  { subject: 'Repetition', A: 76, fullMark: 100 },
-];
+import { Layers, Code, Search, PenTool, BookOpen, Mic } from 'lucide-react';
 
 export const Process: React.FC = () => {
   return (
@@ -28,124 +19,172 @@ export const Process: React.FC = () => {
       </SectionWrapper>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Phase 1 */}
+        {/* Phase 1 - Workbook 공부 순서 */}
         <SectionWrapper delay={200}>
           <BorderGradient className="bg-neutral-900/50 rounded-2xl p-6 sm:p-8 h-full ring-1 ring-white/10">
             <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-            <span className="inline-flex items-center text-xs text-neutral-300 bg-neutral-800/70 ring-1 ring-white/10 rounded-full px-2.5 py-1 mb-4">
-              Phase 1
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-semibold mb-2">Discovery & Analysis</h3>
-            <p className="text-neutral-300 text-sm sm:text-base mb-6">
-              We dive deep into your operations to identify bottlenecks and opportunities for intelligent automation.
-            </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Radar Chart */}
-              <BorderGradient className="bg-neutral-900/60 rounded-xl p-4 ring-1 ring-white/10 min-h-[250px] flex flex-col items-center justify-center">
-                <div className="w-full h-[200px]">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart cx="50%" cy="50%" outerRadius="70%" data={RADAR_DATA}>
-                      <PolarGrid stroke="rgba(255,255,255,0.1)" />
-                      <PolarAngleAxis dataKey="subject" tick={{ fill: 'rgba(255,255,255,0.5)', fontSize: 10 }} />
-                      <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
-                      <Radar
-                        name="Analysis"
-                        dataKey="A"
-                        stroke="#a855f7"
-                        strokeWidth={2}
-                        fill="url(#colorUv)"
-                        fillOpacity={0.5}
-                      />
-                      <defs>
-                        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#a855f7" stopOpacity={0.6}/>
-                            <stop offset="95%" stopColor="#a855f7" stopOpacity={0.1}/>
-                        </linearGradient>
-                      </defs>
-                    </RadarChart>
-                  </ResponsiveContainer>
-                </div>
-                <div className="mt-2 text-xs text-neutral-400">Evaluating operational metrics...</div>
-              </BorderGradient>
+            {/* Phase 1 Badge */}
+            <div className="flex justify-center mb-4">
+              <span className="inline-flex items-center text-sm font-semibold text-white bg-gradient-to-r from-blue-500 to-blue-600 rounded-full px-4 py-1.5 shadow-lg shadow-blue-500/20">
+                Phase 1
+              </span>
+            </div>
 
-              {/* Checklist */}
-              <div className="space-y-2">
-                {[
-                  { icon: Activity, text: 'Infrastructure audit', status: 'Complete', color: 'text-neutral-300' },
-                  { icon: Layers, text: 'Workflow mapping', status: 'In Progress', color: 'text-neutral-300' },
-                  { icon: Zap, text: 'Performance analysis', status: 'Critical', color: 'text-neutral-300' },
-                  { icon: Clock, text: 'Time consumption', status: '85%', color: 'text-neutral-300' },
-                  { icon: TrendingUp, text: 'Automation potential', status: 'Very High', color: 'text-neutral-300' },
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center justify-between rounded-lg bg-neutral-900/60 ring-1 ring-white/10 px-3 py-2">
-                    <div className="flex items-center gap-2">
-                      <item.icon className="w-4 h-4 text-neutral-300" />
-                      <span className="text-sm">{item.text}</span>
-                    </div>
-                    <span className="text-[10px] text-neutral-400">{item.status}</span>
+            <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8">Workbook 공부 순서</h3>
+
+            {/* Vertical Flow Steps */}
+            <div className="flex flex-col items-center gap-3">
+              {/* Step 1 - Preview Page */}
+              <div className="w-full max-w-sm">
+                <div className="rounded-xl overflow-hidden ring-1 ring-blue-500/30 bg-neutral-900/60">
+                  <div className="bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-2">
+                    <h4 className="text-white font-semibold text-center text-sm">1. Preview Page</h4>
                   </div>
-                ))}
+                  <div className="p-3 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-neutral-800/80 flex items-center justify-center ring-1 ring-white/10 shrink-0">
+                      <Search className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <div className="flex-1 space-y-0.5">
+                      <p className="text-xs text-neutral-200">- 새로운 단어/표현 학습</p>
+                      <p className="text-xs text-neutral-200">- 필수 English Tip 배우기</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Arrow Down */}
+              <div className="flex flex-col items-center">
+                <div className="w-0.5 h-3 bg-gradient-to-b from-blue-500 to-yellow-500"></div>
+                <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-yellow-500"></div>
+              </div>
+
+              {/* Step 2 - Warm-Up Page */}
+              <div className="w-full max-w-sm">
+                <div className="rounded-xl overflow-hidden ring-1 ring-yellow-500/30 bg-neutral-900/60">
+                  <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 px-4 py-2">
+                    <h4 className="text-neutral-900 font-semibold text-center text-sm">2. Warm-Up Page</h4>
+                  </div>
+                  <div className="p-3 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-neutral-800/80 flex items-center justify-center ring-1 ring-white/10 shrink-0">
+                      <Layers className="w-5 h-5 text-yellow-400" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-xs text-neutral-200">- Preview 내용 토대로 문제 풀기</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Arrow Down */}
+              <div className="flex flex-col items-center">
+                <div className="w-0.5 h-3 bg-gradient-to-b from-yellow-500 to-emerald-500"></div>
+                <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-emerald-500"></div>
+              </div>
+
+              {/* Step 3 - Main Exercise Page */}
+              <div className="w-full max-w-sm">
+                <div className="rounded-xl overflow-hidden ring-1 ring-emerald-500/30 bg-neutral-900/60">
+                  <div className="bg-gradient-to-r from-emerald-500 to-emerald-600 px-4 py-2">
+                    <h4 className="text-white font-semibold text-center text-sm">3. Main Exercise Page</h4>
+                  </div>
+                  <div className="p-3 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-neutral-800/80 flex items-center justify-center ring-1 ring-white/10 shrink-0">
+                      <Code className="w-5 h-5 text-emerald-400" />
+                    </div>
+                    <div className="flex-1 space-y-0.5">
+                      <p className="text-xs text-neutral-200">- 국문 문장을 보고 스스로 영작</p>
+                      <p className="text-xs text-neutral-200">- 쏘피쌤 유튜브로 비교 및 학습 마무리</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </BorderGradient>
         </SectionWrapper>
 
-        {/* Phase 2 */}
+        {/* Phase 2 - 온라인 강의 공부 순서 */}
         <SectionWrapper delay={400}>
           <BorderGradient className="bg-neutral-900/50 rounded-2xl p-6 sm:p-8 h-full ring-1 ring-white/10">
             <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-            <span className="inline-flex items-center text-xs text-neutral-300 bg-neutral-800/70 ring-1 ring-white/10 rounded-full px-2.5 py-1 mb-4">
-              Phase 2
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-semibold mb-2">Build & Integrate</h3>
-            <p className="text-neutral-300 text-sm sm:text-base mb-6">
-              Our engineers create custom solutions that seamlessly integrate with your existing systems and processes.
-            </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-              <div className="md:col-span-1 flex md:flex-col gap-2">
-                 {[FileText, Search, Settings].map((Icon, idx) => (
-                    <BorderGradient key={idx} as="button" className="h-9 w-9 inline-flex items-center justify-center rounded-lg bg-neutral-900/60 ring-1 ring-white/10 hover:bg-neutral-900 transition">
-                        <Icon className="w-4 h-4 text-neutral-200" />
-                    </BorderGradient>
-                 ))}
+            {/* Phase 2 Badge */}
+            <div className="flex justify-center mb-4">
+              <span className="inline-flex items-center text-sm font-semibold text-white bg-gradient-to-r from-purple-500 to-purple-600 rounded-full px-4 py-1.5 shadow-lg shadow-purple-500/20">
+                Phase 2
+              </span>
+            </div>
+
+            <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8">온라인 강의 공부 순서</h3>
+
+            {/* Vertical Flow Steps */}
+            <div className="flex flex-col items-center gap-3">
+              {/* Step 1 - 영작연습 */}
+              <div className="w-full max-w-sm">
+                <div className="rounded-xl overflow-hidden ring-1 ring-rose-500/30 bg-neutral-900/60">
+                  <div className="bg-gradient-to-r from-rose-500 to-rose-600 px-4 py-2">
+                    <h4 className="text-white font-semibold text-center text-sm">1. 영작연습</h4>
+                  </div>
+                  <div className="p-3 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-neutral-800/80 flex items-center justify-center ring-1 ring-white/10 shrink-0">
+                      <PenTool className="w-5 h-5 text-rose-400" />
+                    </div>
+                    <div className="flex-1 space-y-0.5">
+                      <p className="text-xs text-neutral-200">- 한글 문장을 영어로 작성</p>
+                      <p className="text-xs text-neutral-200">- 문법과 표현 연습</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="md:col-span-4">
-                <BorderGradient className="rounded-xl bg-neutral-950/70 ring-1 ring-white/10 overflow-hidden">
-                    <div className="flex items-center gap-2 px-4 py-2 bg-neutral-900/70">
-                        <span className="h-2.5 w-2.5 rounded-full bg-red-500/70"></span>
-                        <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/70"></span>
-                        <span className="h-2.5 w-2.5 rounded-full bg-green-500/70"></span>
-                        <span className="ml-auto text-[10px] text-neutral-400">workflow_engine.py</span>
+              {/* Arrow Down */}
+              <div className="flex flex-col items-center">
+                <div className="w-0.5 h-3 bg-gradient-to-b from-rose-500 to-violet-500"></div>
+                <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-violet-500"></div>
+              </div>
+
+              {/* Step 2 - 플래쉬카드 */}
+              <div className="w-full max-w-sm">
+                <div className="rounded-xl overflow-hidden ring-1 ring-violet-500/30 bg-neutral-900/60">
+                  <div className="bg-gradient-to-r from-violet-500 to-violet-600 px-4 py-2">
+                    <h4 className="text-white font-semibold text-center text-sm">2. 플래쉬카드</h4>
+                  </div>
+                  <div className="p-3 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-neutral-800/80 flex items-center justify-center ring-1 ring-white/10 shrink-0">
+                      <BookOpen className="w-5 h-5 text-violet-400" />
                     </div>
-                    <pre className="text-[12px] leading-6 px-4 py-4 overflow-auto text-neutral-200 font-mono">
-                        <span className="text-neutral-500"># Intelligent workflow processor</span>{'\n'}
-                        <span className="text-purple-400">class</span> <span className="text-sky-300">WorkflowEngine</span>:{'\n'}
-                        {'    '}<span className="text-purple-400">def</span> <span className="text-emerald-300">process_task</span>(self, task):{'\n'}
-                        {'        '}<span className="text-purple-400">if</span> task.priority <span className="text-purple-400">==</span> <span className="text-emerald-300">'high'</span>:{'\n'}
-                        {'            '}<span className="text-purple-400">return</span> self.fast_track(task)
-                    </pre>
-                </BorderGradient>
-                
-                <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-2">
-                    <div className="flex items-center gap-2 rounded-lg bg-neutral-900/60 ring-1 ring-white/10 px-3 py-2">
-                        <Code className="w-4 h-4 text-blue-400" />
-                        <span className="text-xs text-neutral-300">Modular</span>
+                    <div className="flex-1 space-y-0.5">
+                      <p className="text-xs text-neutral-200">- 핵심 표현 암기</p>
+                      <p className="text-xs text-neutral-200">- 반복 학습으로 기억력 강화</p>
                     </div>
-                    <div className="flex items-center gap-2 rounded-lg bg-neutral-900/60 ring-1 ring-white/10 px-3 py-2">
-                        <Zap className="w-4 h-4 text-emerald-400" />
-                        <span className="text-xs text-neutral-300">Fast</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Arrow Down */}
+              <div className="flex flex-col items-center">
+                <div className="w-0.5 h-3 bg-gradient-to-b from-violet-500 to-cyan-500"></div>
+                <div className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[6px] border-t-cyan-500"></div>
+              </div>
+
+              {/* Step 3 - 말하기연습 */}
+              <div className="w-full max-w-sm">
+                <div className="rounded-xl overflow-hidden ring-1 ring-cyan-500/30 bg-neutral-900/60">
+                  <div className="bg-gradient-to-r from-cyan-500 to-cyan-600 px-4 py-2">
+                    <h4 className="text-white font-semibold text-center text-sm">3. 말하기연습</h4>
+                  </div>
+                  <div className="p-3 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-neutral-800/80 flex items-center justify-center ring-1 ring-white/10 shrink-0">
+                      <Mic className="w-5 h-5 text-cyan-400" />
                     </div>
-                     <div className="flex items-center gap-2 rounded-lg bg-neutral-900/60 ring-1 ring-white/10 px-3 py-2">
-                        <TrendingUp className="w-4 h-4 text-amber-400" />
-                        <span className="text-xs text-neutral-300">Efficient</span>
+                    <div className="flex-1 space-y-0.5">
+                      <p className="text-xs text-neutral-200">- 음성으로 직접 말하기</p>
+                      <p className="text-xs text-neutral-200">- 발음과 유창성 향상</p>
                     </div>
+                  </div>
                 </div>
               </div>
             </div>
-
           </BorderGradient>
         </SectionWrapper>
       </div>
