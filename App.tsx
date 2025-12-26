@@ -26,7 +26,7 @@ function App() {
       <main>
         <Hero />
         <Process />
-        <Community />
+        {/* <Community /> */}
         <Testimonials />
         <Pricing />
         

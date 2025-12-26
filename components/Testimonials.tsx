@@ -5,25 +5,25 @@ import { Star } from 'lucide-react';
 
 const TESTIMONIALS = [
   {
-    text: "This platform completely changed how I present my work. The intuitive interface and beautiful layouts helped me land three major clients in the first month alone.",
+    text: "아..어쩜 이리 재밌나여? 한문제 한문제 풀어서 없어지는게 너무아깝고 생각같아서는 한편에 100문제씩 있었음 좋겠어여",
     name: "Marcus Chen",
     role: "UI/UX Designer at Creative Studio",
     image: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/ca2dff12-04ff-4713-9404-e3cb60f16c8a_320w.jpg"
   },
   {
-    text: "Finally, a portfolio platform that understands photographers. The galleries are stunning and my images have never looked better. My bookings increased by 60%.",
+    text: "컨텐츠가 다양해서 지루하지 않게 영어공부할 수 있어 👍 감사합니다^^",
     name: "Isabella Rodriguez",
     role: "Freelance Photographer",
     image: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/f461de65-1971-4615-aa18-9a8586b86561_320w.webp"
   },
   {
-    text: "As an illustrator, showing my process is crucial. The customizable project pages let me tell the full story behind each piece. It's a game changer.",
+    text: "먼저 문장만들어보고 쌤 강의 들으며 첨삭하고 수정하는데, 한두 단어빼고 똑같이 쓸수 있는 제가 신기해요. 선생님 덕분입니다. 감사해요. 꾸준히 노력하게 해주셔소 고맙습니다. ",
     name: "Alex Thompson",
     role: "Digital Illustrator & Artist",
     image: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/eca707cc-a5b7-439a-b4fd-247f6106c2e1_320w.jpg"
   },
   {
-    text: "I moved my entire studio portfolio here and couldn't be happier. The client feedback has been overwhelmingly positive—they love the clean, modern aesthetic.",
+    text: "와 역쉬 듣기가 어려워여.. 처음들을땐 너무 띄엄띄엄 귀에들리고 자막이 딱나와서보면 너무 쉬운문장이고 다 알고나서 들면 너무 잘들리고... 영어의 길은 너무멀어여~ 다양한 양질의 콘텐츠 너무 감사합니다",
     name: "Sarah Kim",
     role: "Creative Director at Nexus Design",
     image: "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/66d0dc63-851b-4e89-a6a3-cab612c98a06_320w.webp"
@@ -35,13 +35,13 @@ export const Testimonials: React.FC = () => {
     <section className="py-24 max-w-7xl mx-auto px-6">
       <SectionWrapper className="text-center max-w-3xl mx-auto mb-12">
         <span className="inline-flex items-center rounded-full bg-neutral-900/70 ring-1 ring-white/10 px-3 py-1 text-xs text-neutral-300 border border-white/5 mb-6">
-          Client Success Stories
+          학습 성과
         </span>
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight mb-4">
-          What Our Clients Are Saying
+          영어가 두렵던 분들의 놀라운 변화
         </h2>
         <p className="text-neutral-300">
-          Discover how creative professionals are transforming their portfolios with our platform.
+          워크북과 온라인 강의로 영어 습관을 만든 수강생들의 생생한 후기입니다.
         </p>
       </SectionWrapper>
 

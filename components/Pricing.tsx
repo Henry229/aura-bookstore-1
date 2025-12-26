@@ -8,13 +8,13 @@ export const Pricing: React.FC = () => {
     <section className="py-24 max-w-7xl mx-auto px-6">
       <SectionWrapper className="text-center max-w-3xl mx-auto mb-12">
         <span className="inline-flex items-center rounded-full bg-neutral-900/70 ring-1 ring-white/10 px-3 py-1 text-xs text-neutral-300 border border-white/5 mb-6">
-          Simple Pricing
+          학습 플랜
         </span>
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight mb-4">
-          Choose Your Perfect Plan
+          나에게 맞는 학습 플랜 선택하기
         </h2>
         <p className="text-neutral-300">
-          Start free and scale as you grow. All plans include our core features.
+          체계적인 영어 학습을 합리적인 가격에 만나보세요.
         </p>
       </SectionWrapper>
 

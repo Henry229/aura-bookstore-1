@@ -16,11 +16,12 @@ export const CTA: React.FC = () => {
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
             <div className="relative z-10 max-w-3xl mx-auto">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight mb-6">
-                    Ready to showcase your work?
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight mb-6 leading-tight">
+                    <span className="block">100일 후, 달라진 영어 실력을</span>
+                    <span className="block mt-2">경험하세요</span>
                 </h2>
                 <p className="text-base sm:text-lg text-neutral-300 mb-10">
-                    Join thousands of creative professionals who trust our platform to present their best work. Start building your portfolio today.
+                    영작연습부터 말하기까지, 검증된 학습 시스템으로 진짜 영어 실력을 만들어 드립니다.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -31,17 +32,17 @@ export const CTA: React.FC = () => {
                             <span className="absolute -bottom-[42px] -left-[19px] size-20 bg-purple-400 opacity-10 blur-[40px]"></span>
                         </span>
                         <span className="relative z-10 text-white font-medium text-[15px] flex items-center gap-2">
-                            Start for Free <ChevronRight size={16} />
+                            지금 시작하기 <ChevronRight size={16} />
                         </span>
                     </button>
 
                     <a href="#" className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-neutral-300 ring-1 ring-white/10 hover:bg-white/5 transition w-full sm:w-auto justify-center">
-                        View Live Examples <ExternalLink size={16} />
+                        코스 둘러 보기 <ExternalLink size={16} />
                     </a>
                 </div>
 
                 <p className="text-xs text-neutral-400 mt-6">
-                    No credit card required • Free forever • Upgrade anytime
+                    결제 후 즉시 이용 가능 • 언제든 취소 가능
                 </p>
             </div>
         </BorderGradient>
