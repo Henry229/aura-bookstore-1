@@ -8,13 +8,13 @@ export const Process: React.FC = () => {
     <section className="py-24 max-w-7xl mx-auto px-6">
       <SectionWrapper className="text-center max-w-2xl mx-auto mb-12">
         <span className="inline-flex items-center text-xs text-neutral-300 bg-neutral-900/70 border border-white/10 rounded-full px-3 py-1 mb-6">
-          How We Work
+          이렇게 공부해요
         </span>
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight mb-4">
-          Transform Your Workflow
+          쏘피쌤과 함께하는 학습 여정
         </h2>
         <p className="text-neutral-300 text-base">
-          From initial discovery to full deployment, we guide you through every stage of your automation journey.
+          워크북 예습부터 유튜브 복습까지, 단계별 학습으로 영어 실력을 키워보세요.
         </p>
       </SectionWrapper>
 
@@ -93,7 +93,7 @@ export const Process: React.FC = () => {
                       <Code className="w-5 h-5 text-emerald-400" />
                     </div>
                     <div className="flex-1 space-y-0.5">
-                      <p className="text-xs text-neutral-200">- 국문 문장을 보고 스스로 영작</p>
+                      <p className="text-xs texutral-200">- 국문 문장을 보고 스스로 영작</p>
                       <p className="text-xs text-neutral-200">- 쏘피쌤 유튜브로 비교 및 학습 마무리</p>
                     </div>
                   </div>
