@@ -14,7 +14,7 @@ export const Process: React.FC = () => {
           쏘피쌤과 함께하는 학습 여정
         </h2>
         <p className="text-neutral-300 text-base">
-          워크북 예습부터 유튜브 복습까지, 단계별 학습으로 영어 실력을 키워보세요.
+          워크북 예습부터 올쏘의 영어 앱으로 복습까지, 단계별 학습으로 영어 실력을 키워보세요.
         </p>
       </SectionWrapper>
 
