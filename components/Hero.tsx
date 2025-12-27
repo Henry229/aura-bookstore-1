@@ -222,7 +222,7 @@ const BookItem: React.FC<BookItemProps> = ({ book, isActive, scale, onClick }) =
 };
 
 export const Hero: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(3); // Start with '구동사 마스터' (index 3)
+  const [activeIndex, setActiveIndex] = useState(1); // Start with '생활영어 영작연습 (퍼플)' (index 1)
 
   // Responsive Scaling
   const [scale, setScale] = useState(1);
