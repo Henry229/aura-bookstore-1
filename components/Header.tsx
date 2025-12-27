@@ -9,8 +9,8 @@ export const Header: React.FC = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Brand */}
           <a href="#" className="inline-flex items-center gap-2 opacity-90 hover:opacity-100 transition-opacity">
-            <img src="/orsso-logo.svg" alt="Orsso Logo" className="h-8 w-auto" />
-            <img src="/orsso-title.svg" alt="올쏘의 영어" className="h-8 w-auto" />
+            <img src="/orsso-logo.png" alt="Orsso Logo" className="h-10 w-auto" />
+            <span className="text-2xl text-white ml-1 mt-1 font-bold">OrssoEnglish</span>
           </a>
 
           {/* Nav links */}
